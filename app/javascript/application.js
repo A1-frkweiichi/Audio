@@ -4,4 +4,5 @@ console.log("Application script loaded"); //
 import "@hotwired/turbo-rails";
 import "./controllers";
 import * as bootstrap from "bootstrap";
-import "bgm";
+
+import "./custom/bgm";

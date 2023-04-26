@@ -1,10 +1,10 @@
-Importmap.draw do
-  map "application", to: "application.js"
-  map "bgm", to: "bgm.js"
+# Pin npm packages by running ./bin/importmap
 
-  # Specify additional entries to auto-pin by passing them to "pin_all_from"
-  # For example, to pin all JavaScript files in the "app/javascript/controllers" directory:
-  # pin_all_from "app/javascript/controllers", under: "controllers"
+pin 'application', preload: true
+pin '@hotwired/turbo-rails', to: 'turbo.min.js', preload: true
+pin '@hotwired/stimulus', to: 'stimulus.min.js', preload: true
+pin '@hotwired/stimulus-loading', to: 'stimulus-loading.js', preload: true
+pin_all_from 'app/javascript/controllers', under: 'controllers'
 
-  # For more information, see https://github.com/rails/importmap-rails
-end
+# ===== ここを追加 =====
+pin_all_from 'app/javascript/custom', under: 'custom'
